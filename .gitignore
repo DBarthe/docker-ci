@@ -1,0 +1,5 @@
+node_modules
+docker-compose.env
+.idea
+keys
+dist

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h2= title
+
+  div
+    div
+      select(id='version-select', name='version')
+        each release in releaseList
+          option(value=release) #{release}
+    div
+      input(id='publish-checkbox' type='checkbox' checked)
+      label publish
+
+    div
+      input(id='latest-checkbox' type='checkbox' checked)
+      label latest
+
+    div
+      button(type='button', onclick='app.triggerClick()') trigger
+
+
+

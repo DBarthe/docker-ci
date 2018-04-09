@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2 Elassandra-docker CI
+  p Release v#{version}
+  h3 Console output:
+  if error
+    p.red Job Failed
+  else
+    p.green Job Succeed
+  ul
+    each val in output
+      li= val

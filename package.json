@@ -1,0 +1,45 @@
+{
+  "name": "docker-ci",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "babel-node ./lib/bin/www.js",
+    "watch": "nodemon ./lib/bin/www.js --exec babel-node",
+    "build": "babel lib -d dist",
+    "serve": "node dist/bin/www.js",
+    "serve-within-docker": "ssh-keyscan github.com >> ~/.ssh/known_hosts && node dist/bin/www.js",
+    "build-up": "npm run build && docker-compose build && docker-compose up"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^5.0.1",
+    "express": "~4.16.0",
+    "express-basic-auth": "^1.1.4",
+    "http-errors": "~1.6.2",
+    "less-middleware": "~2.2.1",
+    "morgan": "~1.9.0",
+    "pug": "2.0.0-beta11",
+    "randomstring": "^1.1.5",
+    "request": "^2.85.0",
+    "shelljs": "^0.8.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "nodemon": "^1.17.3"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ],
+    "plugins": [
+      "transform-async-to-generator"
+    ]
+  }
+}
