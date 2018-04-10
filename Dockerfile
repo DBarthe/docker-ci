@@ -30,4 +30,4 @@ COPY public ./public
 COPY views ./views
 COPY dist ./dist
 
-CMD /bin/bash /entrypoint.sh
+ENTRYPOINT [ "/bin/bash", "/entrypoint.sh" ]

@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "start": "babel-node ./lib/bin/www.js",
+    "start-worker": "babel-node ./lib/worker.js",
     "watch": "nodemon ./lib/bin/www.js --exec babel-node",
+    "watch-worker": "nodemon ./lib/worker.js --exec babel-node",
     "build": "babel lib -d dist",
     "serve": "node dist/bin/www.js",
-    "serve-within-docker": "ssh-keyscan github.com >> ~/.ssh/known_hosts && node dist/bin/www.js",
+    "serve-worker": "node dist/worker.js",
     "build-up": "npm run build && docker-compose build && docker-compose up"
   },
   "dependencies": {
@@ -18,12 +20,14 @@
     "express": "~4.16.0",
     "express-basic-auth": "^1.1.4",
     "http-errors": "~1.6.2",
+    "kue": "^0.11.6",
     "less-middleware": "~2.2.1",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
     "randomstring": "^1.1.5",
     "request": "^2.85.0",
-    "shelljs": "^0.8.1"
+    "shelljs": "^0.8.1",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

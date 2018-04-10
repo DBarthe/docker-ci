@@ -2,8 +2,11 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet' href='/stylesheets/style.css')
   body
     block content
-    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js')
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js'
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous")
     script(src='/javascripts/app.js')
+    block script
