@@ -6,6 +6,7 @@ Minimum requirements:
 * docker
 * node 8 or higher
 * npm
+* openssh-client
 
 Init:
 ```
@@ -17,19 +18,24 @@ vi docker-compose.env
 ...
 ```
 
-Development server:
+Development servers:
 ```
-npm watch
+docker run --rm -it -p 6379:6379 redis
+npm run watch
+npm run watch-worker
 ```
 
-Production server
+Production servers
 ```
-npm build
-npm serve
+docker run --rm -it -p 6379:6379 redis
+npm run build
+npm run serve
+npm run server-worker
 ```
 
 Production server within docker:
 ```
+npm run build
 docker-compose build
 docker-compose up
 ```
