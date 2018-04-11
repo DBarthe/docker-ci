@@ -11,7 +11,7 @@ services:
     ports:
       - "3000:3000"
     env_file:
-      - ./docker-compose.env
+      - env/prod.env
 
   worker:
     image: docker-ci
@@ -22,6 +22,6 @@ services:
       - ./keys:/root/.ssh
       - /var/run/docker.sock:/var/run/docker.sock
     env_file:
-      - ./docker-compose.env
+      - env/prod.env
 
 

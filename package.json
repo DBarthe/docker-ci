@@ -10,9 +10,11 @@
     "build": "babel lib -d dist",
     "serve": "node dist/bin/www.js",
     "serve-worker": "node dist/worker.js",
-    "build-up": "npm run build && docker-compose build && docker-compose up"
+    "build-up": "npm run build && docker-compose build && docker-compose up",
+    "redis": "docker run --rm -it -p 6379:6379 redis"
   },
   "dependencies": {
+    "@octokit/rest": "^15.2.6",
     "babel-polyfill": "^6.26.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",

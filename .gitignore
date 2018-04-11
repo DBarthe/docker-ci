@@ -3,3 +3,5 @@ docker-compose.env
 .idea
 keys
 dist
+env/dev.env
+env/prod.env
