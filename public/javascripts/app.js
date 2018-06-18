@@ -15,7 +15,7 @@ $(function(){
       type: 'POST',
       url: '/api/trigger/' + release,
       dataType: 'json',
-      data: JSON.stringify({ release: release, publish: publish, latest: latest })
+      data: { release: release, publish: publish, latest: latest }
     }).done(function(res) {
 
       const url = res.progressUrl;
