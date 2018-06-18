@@ -38,6 +38,10 @@ Production server within docker:
 npm run build
 docker-compose build
 docker-compose up
+
+# update docker containers
+npm run compose-update
 ```
+
 
 Visit `localhost:3000`

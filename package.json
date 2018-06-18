@@ -11,7 +11,8 @@
     "serve": "node dist/bin/www.js",
     "serve-worker": "node dist/worker.js",
     "build-up": "npm run build && docker-compose build && docker-compose up",
-    "redis": "docker run --rm -it -p 6379:6379 redis"
+    "redis": "docker run --rm -it -p 6379:6379 redis",
+    "compose-update": "docker-compose up -d --build --force-recreate"
   },
   "dependencies": {
     "@octokit/rest": "^15.2.6",
