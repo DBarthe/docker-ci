@@ -7,7 +7,7 @@ $(function(){
   };
 
   app.triggerClick = function() {
-    app.trigger($("#version-select").val(), $("#publish-checkbox").val(), $("#latest-checkbox").val());
+    app.trigger($("#version-select").val(), $("#publish-checkbox").is(':checked'), $("#latest-checkbox").is(':checked'));
   };
 
   app.submit = function(release, publish, latest) {
