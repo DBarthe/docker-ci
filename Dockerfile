@@ -9,7 +9,8 @@ ENV DOCKER_HUB_PASSWORD changeit
 ENV GITHUB_USER changeit
 ENV GITHUB_EMAIL changeit
 
-RUN apk add --no-cache git openssh-client curl bash
+RUN apk add --no-cache git openssh-client curl bash python python-dev py-pip build-base \
+    && pip install jinja2-cli
 
 RUN mkdir -p /root/.ssh
 
